@@ -77,7 +77,7 @@
         {
             "mark": {
                 "type": "arc",
-                "outerRadius": 350
+                "outerRadius": 250
             }
         },
         {
@@ -87,7 +87,7 @@
                 "fontStyle": "italic",
                 "fontWeight": "bold",
                 "font": "Courier New",
-                "radius": 380
+                "radius": 280
             },
             "encoding": {
                 "text": {
