@@ -41,7 +41,7 @@
       "filter": "country_selection == null || datum.GrowthRate == country_selection"
     }
   ],
-  "width": "container",
+  "width": 1147,
   "height": 800,
   "encoding": {
     "x": {
