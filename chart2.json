@@ -46,7 +46,7 @@
     "height": 400,
     "encoding": {
         "opacity": {
-            "value": 0.8
+            "value": 0.7
         },
         "x": {
             "field": "Density (per km²)",

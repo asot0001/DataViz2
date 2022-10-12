@@ -21,6 +21,7 @@
             "type": "quantitative",
             "stack": true
         },
+        
         "color": {
             "field": "2022pop",
             "type": "quantitative",
@@ -35,6 +36,8 @@
                 ]
             }
         },
+        "opacity": {
+            "value": 0.7},
         "tooltip": [
             {
                 "field": "Name",

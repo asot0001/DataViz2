@@ -53,7 +53,8 @@
           1500000000
         ]
       }
-    },
+    }, "opacity": {
+      "value": 0.7},
     "tooltip": [
       {
         "field": "properties.NAME",
