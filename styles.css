@@ -1,11 +1,26 @@
-
+body {
+  min-width: 700px;
+}
+.vis-container {
+  width: 100%;
+  
+  
+}
+.page {
+  width: 850px;
+  background-color: white;
+  margin: auto;
+  padding: 50px;
+  padding-top: 35px;
+}
 
 html{
     font-family: 'Courier New', Courier, monospace;
     margin: auto;
     width: 60%;
+    
     font-weight: bold;
-    background-color: rgb(238, 245, 246);
+    background-color: rgb(255, 255, 255);
     
     padding: 10px;
 }
@@ -13,6 +28,7 @@ html{
   text-align: center;
   font-weight:400;
    font-size: large;
+  
 }
 .title{
   text-align: center;

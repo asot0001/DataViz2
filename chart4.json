@@ -13,7 +13,7 @@
             "filter": "datum['Name']=='China' || datum['Name']=='United States' || datum['Name']=='Mexico' || datum['Name']=='Russia'|| datum['Name']=='India'|| datum['Name']=='Pakistan'|| datum['Name']=='Bangladesh'|| datum['Name']=='Indonesia'|| datum['Name']=='Nigeria'|| datum['Name']=='Brazil'"
         }
     ],
-    "width": 1200,
+    "width": "container",
     "height": 800,
     "encoding": {
         "theta": {
