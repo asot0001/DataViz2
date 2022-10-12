@@ -8,18 +8,26 @@
     },
     "params": [
         {
-            "name": "population_selection",
+            "name": "country_selection",
             "bind": {
                 "input": "select",
                 "options": [
                     null,
-                    "Ukraine"
+                    0.98,
+                    1,
+                    1.02,
+                    1.03,
+                    1.04
                 ],
                 "labels": [
                     "All",
-                    "Ukraine"
+                    "0.98",
+                    "1",
+                    "1.02",
+                    "1.03",
+                    "1.04"
                 ],
-                "name": "Country Selection: "
+                "name": "Growth Rate Selection: "
             }
         }
     ],
@@ -29,10 +37,10 @@
             "as": "2022pop"
         },
         {
-            "filter": "population_selection == null || datum.Name == population_selection"
+            "filter": "country_selection == null || datum.GrowthRate == country_selection"
         }
     ],
-    "width": 1155,
+    "width": 1125,
     "height": 400,
     "encoding": {
         "opacity": {
@@ -53,16 +61,16 @@
             }
         },
         "y": {
-            "field": "GrowthRate",
+            "field": "Area (km²)",
             "type": "quantitative",
             "axis": {
-                "tickCount": 7
+                "tickCount": 8
             },
             "scale": {
                 "type": "log",
                 "domain": [
-                    0.9,
-                    1.08
+                    1,
+                    100000000
                 ]
             }
         },
@@ -163,7 +171,7 @@
                 },
                 "opacity": {
                     "condition": {
-                        "test": "datum['Name']=='Macau' || datum['Name']=='Ukraine' || datum['Name']=='Moldova' || datum['Name']=='Monaco'",
+                        "test": "datum['Name']=='Macau' || datum['Name']=='Ukraine' || datum['Name']=='Moldova' || datum['Name']=='Monaco' || datum['Name']=='Greenland'|| datum['Name']=='Hong Kong'",
                         "value": 1
                     },
                     "value": 0

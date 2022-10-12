@@ -1,26 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Rank of the Countries and Their Growth Rate"
-  },
   "data": {
     "url": "data/World Population Live Dataset.csv"
   },
-  "transform": [
-    {
-      "calculate": "datum['2022'] * 1000",
-      "as": "2022pop"
-    },
-    {
-      "calculate": "datum['1970'] * 1000",
-      "as": "1970pop"
-    },
-    {
-      "filter": "country_selection == null || datum.GrowthRate == country_selection"
-  }
-  ],
-  "width": 1100,
-  "height": 800,
   "params": [
     {
       "name": "country_selection",
@@ -46,32 +28,36 @@
       }
     }
   ],
+  "transform": [
+    {
+      "calculate": "datum['2022'] * 1000",
+      "as": "2022pop"
+    },
+    {
+      "calculate": "datum['1970'] * 1000",
+      "as": "1970pop"
+    },
+    {
+      "filter": "datum['Name']=='China' || datum['Name']=='United States' || datum['Name']=='Mexico' || datum['Name']=='Russia'|| datum['Name']=='India'|| datum['Name']=='Pakistan'|| datum['Name']=='Bangladesh'|| datum['Name']=='Indonesia'|| datum['Name']=='Nigeria'|| datum['Name']=='Brazil'"
+    },
+    {
+      "filter": "country_selection == null || datum.GrowthRate == country_selection"
+    }
+  ],
+  "width": 1235,
+  "height": 800,
   "encoding": {
-    "opacity": {
-      "value": 0.8
+    "x": {
+      "field": "2022pop",
+      "type": "quantitative",
+      "title": "Population between 1970 and "
     },
     "y": {
-      "field": "Rank",
-      "type": "quantitative",
-      "sort": "descending",
-      "axis": {
-        "tickCount": 6
-      },
-      "scale": {}
+      "field": "Name",
+      "type": "nominal"
     },
-    "x": {
-      "field": "Area (km²)",
-      "type": "quantitative",
-      "axis": {
-        "tickCount": 7
-      },
-      "scale": {
-        "type": "log",
-        "domain": [
-          1,
-          100000000
-        ]
-      }
+    "opacity": {
+      "value": 0.6
     },
     "tooltip": [
       {
@@ -115,71 +101,23 @@
   },
   "layer": [
     {
-      "mark": "point",
-      "encoding": {
-        "size": {
-          "field": "1970pop",
-          "title": "Population in 1970",
-          "type": "quantitative",
-          "scale": {
-            "type": "threshold",
-            "domain": [
-              10000,
-              500000,
-              1000000,
-              15000000,
-              200000000
-            ],
-            "range": [
-              100,
-              200,
-              800,
-              1000,
-              2000
-            ]
-          }
-        },
-        "color": {
-          "field": "2022pop",
-          "title": "Population in 2022",
-          "type": "quantitative",
-          "sort": "descending",
-          "scale": {
-            "scheme": "viridis",
-            "type": "log",
-            "domain": [
-              1000,
-              1500000000
-            ]
-          }
-        }
-      }
+      "mark": "bar"
     },
     {
-      "mark": {
-        "type": "text",
-        "align": "left",
-        "baseline": "middle",
-        "dx": 30,
-        "fontSize": 9,
-        "fontStyle": "italic",
-        "fontWeight": "bold",
-        "font": "Courier New"
-      },
+      "mark": "bar",
       "encoding": {
-        "text": {
-          "field": "Name",
-          "type": "nominal"
+        "x": {
+          "field": "1970pop",
+          "type": "quantitative",
+          "title": "2022"
         },
-        "color": {
-          "value": "black"
+        "y": {
+          "field": "Name",
+          "type": "nominal",
+          "title":"Country"
         },
         "opacity": {
-          "condition": {
-            "test": "datum['Name']=='China' || datum['Name']=='Greenland' || datum['Name']=='Russia' || datum['Name']=='Vatican City' || datum['Name']=='Australia' || datum['Name']=='Falkland Islands'|| datum['Name']=='Mongolia'",
-            "value": 1
-          },
-          "value": 0
+          "value": 1
         },
         "tooltip": [
           {
