@@ -1,0 +1,29 @@
+
+
+html{
+    font-family: 'Courier New', Courier, monospace;
+    margin: auto;
+    width: 60%;
+    font-weight: bold;
+    background-color: rgb(238, 245, 246);
+    
+    padding: 10px;
+}
+
+
+mark.monaco {
+    background-color: rgb(113, 221, 84);
+    color: rgb(255, 255, 255);
+  }
+  mark.moldova {
+    background-color: rgb(42, 153, 193);
+    color: rgb(255, 255, 255);
+  }
+  mark.china {
+    background-color: rgb(140, 0, 255);
+    color: rgb(255, 252, 252);
+  }
+  mark.vatican {
+    background-color: rgb(255, 225, 0);
+    color: rgb(255, 252, 252);
+  }

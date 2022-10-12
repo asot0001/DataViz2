@@ -1,0 +1,207 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Density and Growth Rate of the Countries"
+    },
+    "data": {
+        "url": "data/World Population Live Dataset.csv"
+    },
+    "params": [
+        {
+            "name": "population_selection",
+            "bind": {
+                "input": "select",
+                "options": [
+                     null,
+                     "datum['Name'] == 'Ukraine'"
+                    
+                ],
+                "labels": [
+                    "All",
+                    "Ukraine"
+                    
+                ],
+                "name": "Population Selection: "
+            }
+        }
+    ],
+    "transform": [
+        {
+            "calculate": "datum['2022'] * 1000",
+            "as": "2022pop"
+        },
+        {"filter": "population_selection == null || datum['2022'] == population_selection" }
+       
+    ],
+    "width": 1105,
+    "height": 400,
+    "encoding": {
+        "opacity": {
+            "value": 0.8
+        },
+        "x": {
+            "field": "Density (per km²)",
+            "type": "quantitative",
+            "axis": {
+                "tickCount": 6
+            },
+            "scale": {
+                "type": "log",
+                "domain": [
+                    0.01,
+                    25000
+                ]
+            }
+        },
+        "y": {
+            "field": "GrowthRate",
+            "type": "quantitative",
+            "axis": {
+                "tickCount": 7
+            },
+            "scale": {
+                "type": "log",
+                "domain": [
+                    0.9,
+                    1.08
+                ]
+            }
+        },
+        "tooltip": [
+            {
+                "field": "Name",
+                "type": "nominal",
+                "title": "Country"
+            },
+            {
+                "field": "GrowthRate",
+                "type": "quantitative",
+                "title": "Growth Rate"
+            },
+            {
+                "field": "Rank",
+                "type": "quantitative",
+                "title": "Rank"
+            },
+            {
+                "field": "Density (per km²)",
+                "type": "quantitative",
+                "title": "Density (per km²)"
+            },
+            {
+                "field": "World Population Percentage",
+                "type": "nominal",
+                "title": "World Population Percentage"
+            },
+            {
+                "field": "2022pop",
+                "type": "quantitative",
+                "title": "Population in 2022",
+                "format": ",.4s"
+            }
+        ]
+    },
+    "layer": [
+        {
+            "mark": "circle",
+            "encoding": {
+                "color": {
+                    "field": "2022pop",
+                    "title": "Population in 2022",
+                    "type": "quantitative",
+                    "sort": "descending",
+                    "scale": {
+                        "scheme": "viridis",
+                        "type": "log",
+                        "domain": [
+                            1000,
+                            1500000000
+                        ]
+                    }
+                },
+                "size": {
+                    "field": "Rank",
+                    "type": "quantitative",
+                    "sort": "descending",
+                    "scale": {
+                        "type": "threshold",
+                        "domain": [
+                            10,
+                            50,
+                            100,
+                            150,
+                            200
+                        ],
+                        "range": [
+                            100,
+                            200,
+                            400,
+                            800,
+                            1600
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "text",
+                "align": "right",
+                "baseline": "middle",
+                "dx": -26,
+                "fontSize": 9,
+                "fontStyle": "italic",
+                "fontWeight": "bold"
+            },
+            "encoding": {
+                "text": {
+                    "field": "Name",
+                    "type": "nominal"
+                },
+                "color": {
+                    "value": "black"
+                },
+                "opacity": {
+                    "condition": {
+                        "test": "datum['Name']=='Macau' || datum['Name']=='Ukraine' || datum['Name']=='Moldova' || datum['Name']=='Monaco'",
+                        "value": 1
+                    },
+                    "value": 0
+                },
+                "tooltip": [
+                    {
+                        "field": "Name",
+                        "type": "nominal",
+                        "title": "Country"
+                    },
+                    {
+                        "field": "GrowthRate",
+                        "type": "quantitative",
+                        "title": "Growth Rate"
+                    },
+                    {
+                        "field": "Rank",
+                        "type": "quantitative",
+                        "title": "Rank"
+                    },
+                    {
+                        "field": "Density (per km²)",
+                        "type": "quantitative",
+                        "title": "Density (per km²)"
+                    },
+                    {
+                        "field": "World Population Percentage",
+                        "type": "nominal",
+                        "title": "World Population Percentage"
+                    },
+                    {
+                        "field": "2022pop",
+                        "type": "quantitative",
+                        "title": "Population in 2022",
+                        "format": ",.4s"
+                    }
+                ]
+            }
+        }
+    ]
+}
