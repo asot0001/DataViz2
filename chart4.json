@@ -1,0 +1,95 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple pie chart with embedded data.",
+    "data": {
+        "url": "data/World Population Live Dataset.csv"
+    },
+    "transform": [
+        {
+            "calculate": "datum['2022'] * 1000",
+            "as": "2022pop"
+        },
+        {
+            "filter": "datum['Name']=='China' || datum['Name']=='United States' || datum['Name']=='Mexico' || datum['Name']=='Russia'|| datum['Name']=='India'|| datum['Name']=='Pakistan'|| datum['Name']=='Bangladesh'"
+        }
+    ],
+    "width": 1150,
+    "height": 500,
+    "encoding": {
+        "theta": {
+            "field": "Rank",
+            "type": "quantitative",
+            "stack": true
+        },
+        "color": {
+            "field": "2022pop",
+            "type": "quantitative",
+            "sort": "descending",
+            "title":"Population in 2022",
+            "scale": {
+                "scheme": "viridis",
+                "type": "log",
+                "domain": [
+                    1000,
+                    1500000000
+                ]
+            }
+        }, "tooltip": [
+            {
+              "field": "Name",
+              "type": "nominal",
+              "title": "Country"
+            },
+            {
+              "field": "GrowthRate",
+              "type": "quantitative",
+              "title": "Growth Rate"
+            },
+            {
+              "field": "Rank",
+              "type": "quantitative",
+              "title": "Rank"
+            },
+            {
+              "field": "Density (per km²)",
+              "type": "quantitative",
+              "title": "Density (per km²)"
+              
+            },
+            {
+              "field": "2022pop",
+              "type": "quantitative",
+              "title": "Population in 2022",
+              "format": ",.4s"
+            },
+            {
+              "field": "Area (km²)",
+              "type": "quantitative",
+              "title": "Area (km²)",
+              "format": ",.4s"
+      
+            }
+          ]
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "arc",
+                "outerRadius": 180
+            }
+            
+        },
+        {
+            "mark": {
+                "type": "text",
+                "radius": 205
+            },
+            "encoding": {
+                "text": {
+                    "field": "Name",
+                    "type": "nominal"
+                }
+            }
+        }
+    ]
+}
