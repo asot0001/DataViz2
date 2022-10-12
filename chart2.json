@@ -151,7 +151,8 @@
                 "dx": -26,
                 "fontSize": 9,
                 "fontStyle": "italic",
-                "fontWeight": "bold"
+                "fontWeight": "bold",
+                "font": "Courier New"
             },
             "encoding": {
                 "text": {

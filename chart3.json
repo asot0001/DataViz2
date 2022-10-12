@@ -5,16 +5,17 @@
   },
   "data": {
     "url": "data/World Population Live Dataset.csv"
-  }, "transform": [
+  },
+  "transform": [
     {
-        "calculate": "datum['2022'] * 1000",
-        "as": "2022pop"
+      "calculate": "datum['2022'] * 1000",
+      "as": "2022pop"
     },
     {
       "calculate": "datum['1970'] * 1000",
       "as": "1970pop"
-  }
-],
+    }
+  ],
   "width": 1050,
   "height": 800,
   "params": [
@@ -147,7 +148,8 @@
         "dx": -26,
         "fontSize": 9,
         "fontStyle": "italic",
-        "fontWeight":"bold"
+        "fontWeight": "bold",
+        "font": "Courier New"
       },
       "encoding": {
         "text": {
@@ -157,14 +159,14 @@
         "color": {
           "value": "black"
         },
-         "opacity": {
-          
-            "condition": {
-              "test": "datum['Name']=='China' || datum['Name']=='Ukraine' || datum['Name']=='Moldova' || datum['Name']=='Vatican City'","value": 1
-            },"value": 0
-          
-         },
-         "tooltip": [
+        "opacity": {
+          "condition": {
+            "test": "datum['Name']=='China' || datum['Name']=='Ukraine' || datum['Name']=='Moldova' || datum['Name']=='Vatican City'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
           {
             "field": "Name",
             "type": "nominal",
@@ -203,7 +205,6 @@
             "format": ",.4s"
           }
         ]
-        
       }
     }
   ]

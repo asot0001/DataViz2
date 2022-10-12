@@ -10,14 +10,14 @@
             "as": "2022pop"
         },
         {
-            "filter": "datum['Name']=='China' || datum['Name']=='United States' || datum['Name']=='Mexico' || datum['Name']=='Russia'|| datum['Name']=='India'|| datum['Name']=='Pakistan'|| datum['Name']=='Bangladesh'"
+            "filter": "datum['Name']=='China' || datum['Name']=='United States' || datum['Name']=='Mexico' || datum['Name']=='Russia'|| datum['Name']=='India'|| datum['Name']=='Pakistan'|| datum['Name']=='Bangladesh'|| datum['Name']=='Indonesia'|| datum['Name']=='Nigeria'|| datum['Name']=='Brazil'"
         }
     ],
     "width": 1150,
-    "height": 500,
+    "height": 800,
     "encoding": {
         "theta": {
-            "field": "Rank",
+            "field": "Area (km²)",
             "type": "quantitative",
             "stack": true
         },
@@ -25,7 +25,7 @@
             "field": "2022pop",
             "type": "quantitative",
             "sort": "descending",
-            "title":"Population in 2022",
+            "title": "Population in 2022",
             "scale": {
                 "scheme": "viridis",
                 "type": "log",
@@ -34,55 +34,57 @@
                     1500000000
                 ]
             }
-        }, "tooltip": [
+        },
+        "tooltip": [
             {
-              "field": "Name",
-              "type": "nominal",
-              "title": "Country"
+                "field": "Name",
+                "type": "nominal",
+                "title": "Country"
             },
             {
-              "field": "GrowthRate",
-              "type": "quantitative",
-              "title": "Growth Rate"
+                "field": "GrowthRate",
+                "type": "quantitative",
+                "title": "Growth Rate"
             },
             {
-              "field": "Rank",
-              "type": "quantitative",
-              "title": "Rank"
+                "field": "Rank",
+                "type": "quantitative",
+                "title": "Rank"
             },
             {
-              "field": "Density (per km²)",
-              "type": "quantitative",
-              "title": "Density (per km²)"
-              
+                "field": "Density (per km²)",
+                "type": "quantitative",
+                "title": "Density (per km²)"
             },
             {
-              "field": "2022pop",
-              "type": "quantitative",
-              "title": "Population in 2022",
-              "format": ",.4s"
+                "field": "2022pop",
+                "type": "quantitative",
+                "title": "Population in 2022",
+                "format": ",.4s"
             },
             {
-              "field": "Area (km²)",
-              "type": "quantitative",
-              "title": "Area (km²)",
-              "format": ",.4s"
-      
+                "field": "Area (km²)",
+                "type": "quantitative",
+                "title": "Area (km²)",
+                "format": ",.4s"
             }
-          ]
+        ]
     },
     "layer": [
         {
             "mark": {
                 "type": "arc",
-                "outerRadius": 180
+                "outerRadius": 350
             }
-            
         },
         {
             "mark": {
                 "type": "text",
-                "radius": 205
+                "fontSize": 9,
+                "fontStyle": "italic",
+                "fontWeight": "bold",
+                "font": "Courier New",
+                "radius": 380
             },
             "encoding": {
                 "text": {
