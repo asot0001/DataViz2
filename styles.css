@@ -19,6 +19,7 @@ html{
     margin: auto;
     width: 60%;
     
+    
     font-weight: bold;
     background-color: rgb(255, 255, 255);
     
@@ -28,12 +29,14 @@ html{
   text-align: center;
   font-weight:400;
    font-size: large;
+   
   
 }
 .title{
   text-align: center;
   font-weight:bold;
    font-size: x-large;
+   background-color: rgb(206, 206, 206);
 }
 
 mark.monaco {
