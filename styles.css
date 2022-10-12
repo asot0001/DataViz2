@@ -9,7 +9,16 @@ html{
     
     padding: 10px;
 }
-
+.center{
+  text-align: center;
+  font-weight:400;
+   font-size: large;
+}
+.title{
+  text-align: center;
+  font-weight:bold;
+   font-size: x-large;
+}
 
 mark.monaco {
     background-color: rgb(113, 221, 84);
@@ -20,10 +29,14 @@ mark.monaco {
     color: rgb(255, 255, 255);
   }
   mark.china {
-    background-color: rgb(140, 0, 255);
+    background-color: rgb(115, 0, 255);
     color: rgb(255, 252, 252);
   }
   mark.vatican {
     background-color: rgb(255, 225, 0);
+    color: rgb(255, 252, 252);
+  }
+  mark.IP{
+    background-color: rgb(162, 101, 238);
     color: rgb(255, 252, 252);
   }

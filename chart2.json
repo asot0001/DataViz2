@@ -33,7 +33,7 @@
         {"filter": "population_selection == null || datum['2022'] == population_selection" }
        
     ],
-    "width": 1105,
+    "width": 1155,
     "height": 400,
     "encoding": {
         "opacity": {

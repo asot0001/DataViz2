@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Population of Countries Divided by Color",
-  "width": 1150,
+  "width": 1200,
   "height": 600,
   "projection": {
     "type": "equalEarth"
