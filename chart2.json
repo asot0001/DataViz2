@@ -12,14 +12,12 @@
             "bind": {
                 "input": "select",
                 "options": [
-                     null,
-                     "datum['Name'] == 'Ukraine'"
-                    
+                    null,
+                    "Ukraine"
                 ],
                 "labels": [
                     "All",
                     "Ukraine"
-                    
                 ],
                 "name": "Country Selection: "
             }
@@ -30,8 +28,9 @@
             "calculate": "datum['2022'] * 1000",
             "as": "2022pop"
         },
-        {"filter": "population_selection == null || datum['2022'] == population_selection" }
-       
+        {
+            "filter": "population_selection == null || datum.Name == population_selection"
+        }
     ],
     "width": 1155,
     "height": 400,
