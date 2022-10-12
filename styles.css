@@ -1,6 +1,4 @@
-body {
-  min-width: 700px;
-}
+
 .vis-container {
   width: 100%;
   
@@ -31,6 +29,10 @@ html{
    font-size: large;
    
   
+}
+.titlee{
+
+   background-color: rgb(206, 206, 206);
 }
 .title{
   text-align: center;
