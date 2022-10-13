@@ -65,6 +65,7 @@
         "y": {
             "field": "Area (km²)",
             "type": "quantitative",
+            
             "axis": {
                 "tickCount": 8
             },
@@ -159,9 +160,8 @@
                 "baseline": "middle",
                 "dx": -26,
                 "fontSize": 9,
-                "fontStyle": "italic",
-                "fontWeight": "bold",
-                "font": "Courier New"
+                "fontStyle": "italic"
+               
             },
             "encoding": {
                 "text": {

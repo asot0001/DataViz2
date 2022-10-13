@@ -164,9 +164,7 @@
         "baseline": "middle",
         "dx": 30,
         "fontSize": 9,
-        "fontStyle": "italic",
-        "fontWeight": "bold",
-        "font": "Courier New"
+        "fontStyle": "italic"
       },
       "encoding": {
         "text": {
