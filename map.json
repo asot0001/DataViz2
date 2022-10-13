@@ -26,7 +26,8 @@
           "GrowthRate",
           "Rank",
           "Density (per km²)",
-          "2022"
+          "2022",
+          "1970"
         ]
       }
     },
@@ -34,14 +35,21 @@
       "calculate": "datum['2022'] * 1000",
       "as": "2022pop"
     },
-    {"calculate": "datum['2022'] + 0.1", "as": "2022new"}
+    {
+      "calculate": "datum['2022pop'] + 200000",
+      "as": "2022new"
+    },
+    {
+      "calculate": "datum['1970'] * 1000",
+      "as": "1970pop"
+    }
   ],
   "mark": {
     "type": "geoshape"
   },
   "encoding": {
     "color": {
-      "field": "2022pop",
+      "field": "2022new",
       "type": "quantitative",
       "title": "Population in 2022",
       "sort": "descending",
@@ -49,12 +57,14 @@
         "scheme": "viridis",
         "type": "log",
         "domain": [
-          1000,
+          100,
           1500000000
         ]
       }
-    }, "opacity": {
-      "value": 0.7},
+    },
+    "opacity": {
+      "value": 0.7
+    },
     "tooltip": [
       {
         "field": "properties.NAME",
@@ -75,7 +85,6 @@
         "field": "Density (per km²)",
         "type": "quantitative",
         "title": "Density (per km²)"
-        
       },
       {
         "field": "2022pop",
@@ -88,7 +97,6 @@
         "type": "quantitative",
         "title": "Area (km²)",
         "format": ",.4s"
-
       }
     ]
   }
