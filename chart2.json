@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": {
-        "text": "Density and Growth Rate of the Countries"
+        "text": "Area and Density of the Countries"
     },
     "data": {
         "url": "data/World Population Live Dataset.csv"
