@@ -1,8 +1,9 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Population of Countries Divided by Color",
+  "title":"",
   "width": "container",
   "height": 600,
+  "background":null,
   "projection": {
     "type": "equalEarth"
   },
@@ -36,7 +37,7 @@
       "as": "2022pop"
     },
     {
-      "calculate": "datum['2022pop'] + 200000",
+      "calculate": "datum['2022pop'] + 2",
       "as": "2022new"
     },
     {

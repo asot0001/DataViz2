@@ -18,8 +18,9 @@ html{
     width: 60%;
     
     
+    
     font-weight: bold;
-    background-color: rgb(255, 255, 255);
+    
     
     padding: 10px;
 }
@@ -27,18 +28,32 @@ html{
   text-align: center;
   font-weight:400;
    font-size: large;
+
+   
    
   
 }
+
+.centers{
+  text-align: center;
+  font-weight:400;
+   font-size: small;
+
+   
+   
+  
+}
+
+
 .titlee{
 
-   background-color: rgb(206, 206, 206);
+   background-color: rgb(241, 135, 135);
 }
 .title{
   text-align: center;
   font-weight:bold;
    font-size: x-large;
-   background-color: rgb(206, 206, 206);
+   background-color: rgb(164, 164, 164);
 }
 
 mark.monaco {
