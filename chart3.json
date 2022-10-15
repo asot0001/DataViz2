@@ -124,6 +124,8 @@
           "field": "1970pop",
           "title": "Population in 1970",
           "type": "quantitative",
+          "legend":{"format": ",.1s"},
+          
           "scale": {
             "type": "threshold",
             "domain": [
